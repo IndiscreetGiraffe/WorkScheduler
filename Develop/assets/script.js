@@ -8,13 +8,13 @@ currentDay.innerText = moment().format("dddd MMM Do YYYY");
 var currentHour = moment().format('h');
 var currentTime = parseInt(currentHour);
 
-//if (currentHour > currentTime) {
-    //$('.input').addClass('future');
-//} else if (currentTime == 9) {
-    //$('.input').addClass('present');
-//} else {
-    //$('.input').addClass('past');
-//};
+if (9 > currentTime) {
+    $('.input').addClass('future');
+} else if (currentTime == 9) {
+    $('.input').addClass('present');
+} else {
+    $('.input').addClass('past');
+}
 
 saveBtn.on("click", function() {
     console.log(this);
