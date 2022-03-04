@@ -16,8 +16,7 @@
   An application to help you keep your work schedule organized. With functionality to save the inputs and have it show up when you reload the page.
 
   
-  <img src= "./images/image.png>
-
+  <img src="./images/image.png">
   
  
 
