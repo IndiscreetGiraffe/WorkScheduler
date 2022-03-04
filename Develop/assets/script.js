@@ -6,16 +6,15 @@ var saveBtn = $(".saveBtn");
 currentDay.innerText = moment().format("dddd MMM Do YYYY");
 
 var currentHour = moment().format('h');
-var currentTime = parseInt(currentHour);
-
-if (9 > currentTime) {
+//the box changes color depending on what time it is
+if (currentHour > hour) {
     $('.input').addClass('future');
-} else if (currentTime == 9) {
+} else if (currentHour == hour ) {
     $('.input').addClass('present');
 } else {
     $('.input').addClass('past');
 }
-
+//the content saves in local storage
 saveBtn.on("click", function() {
     console.log(this);
     var time = $(this).siblings(".hour").text();
@@ -23,3 +22,13 @@ saveBtn.on("click", function() {
 
     localStorage.setItem(time, plan);
 });
+
+    $(".hour").each(function() {
+        var currentHour = $(this).text();
+        var currentPlan = localStorage.getItem(currentHour);
+
+        if(currentPlan !== null) {
+            $(this).siblings(".input").val(currentPlan);
+        }
+    });
+
